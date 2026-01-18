@@ -22,7 +22,7 @@ const MAX_NODES = 50;
 export function AnimatedBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const nodesRef = useRef<Node[]>([]);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | undefined>(undefined);
     const [isDark, setIsDark] = useState(true);
 
     // Theme detection
