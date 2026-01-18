@@ -1,0 +1,287 @@
+// ============================================================================
+// PROJECT DATA
+// Centralized data file for portfolio content
+// Refactored for modularity and easy maintenance
+// ============================================================================
+
+import { Project, Experience, SocialLink, TechItem, Honor, SkillCategory } from '@/types';
+
+// ============================================================================
+// TECH STACK MARQUEE ITEMS
+// ============================================================================
+
+export const techStackItems: TechItem[] = [
+    { name: 'Docker', category: 'deployment' },
+    { name: 'Kubernetes', category: 'deployment' },
+    { name: 'FastAPI', category: 'deployment' },
+    { name: 'PyTorch', category: 'ml' },
+    { name: 'Kafka', category: 'data' },
+    { name: 'React', category: 'core' },
+    { name: 'PostgreSQL', category: 'data' },
+    { name: 'Qdrant', category: 'data' },
+    { name: 'MLflow', category: 'deployment' },
+    { name: 'Redis', category: 'data' },
+    { name: 'Python', category: 'core' },
+    { name: 'TypeScript', category: 'core' },
+];
+
+// ============================================================================
+// FEATURED PROJECTS (With Viettel AI as #1 Spotlight)
+// ============================================================================
+
+export const projects: Project[] = [
+    // === SPOTLIGHT PROJECT: Viettel AI Coding Assistant ===
+    {
+        id: 'viettel-llm',
+        title: 'Viettel AI Coding Assistant',
+        description:
+            'Edge-optimized code completion running on CPU with 20-50ms latency. Privacy-first, zero cloud dependency.',
+        fullDescription:
+            'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses Fill-in-the-Middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
+        tags: ['LLM', 'On-device AI', 'Quantization', 'Viettel Internship'],
+        image: '/images/viettel-llm.svg',
+        architectureImage: '/assets/architecture/viettel-llm.png',
+        techStack: [
+            { name: 'Qwen2.5-Coder-0.5B' },
+            { name: 'QLoRA + DPO' },
+            { name: 'GGUF Q4_K_M' },
+            { name: 'llama-cpp-python' },
+            { name: 'FastAPI' },
+            { name: 'Docker' },
+        ],
+        metrics: [
+            { label: 'Inference Latency', value: '20-50ms' },
+            { label: 'Model Size', value: '~400MB' },
+            { label: 'Infrastructure', value: 'CPU Only' },
+            { label: 'API Compatible', value: 'OpenAI' },
+        ],
+        problem:
+            'Cloud-based code completion (GitHub Copilot) requires constant internet, has 200-500ms latency, raises privacy concerns for enterprise code, and incurs $10-20/month subscription costs.',
+        solution:
+            'Fine-tuned Qwen2.5-Coder with QLoRA on 300K+ code files, aligned with DPO, quantized to 4-bit GGUF. Deployed as OpenAI-compatible API server. Achieves 20-50ms latency on CPU, works offline, zero external dependencies.',
+        githubUrl: '#', // Will be updated
+        isSpotlight: true,
+    },
+
+    // === PROJECT 2: Graph-Based Movie RecSys ===
+    {
+        id: 'graphrec',
+        title: 'Graph-Based Movie RecSys',
+        description:
+            'Real-time movie recommendation with <50ms latency using LightGCN and Vector Database. Supports 610 users with cold-start handling.',
+        fullDescription:
+            'Implemented graph neural network for recommendation, capturing multi-hop neighborhood information. Vector similarity search with Qdrant for sub-100ms responses.',
+        tags: ['Deep Learning', 'Microservices', 'High Performance'],
+        image: '/images/graphrec-arch.svg',
+        architectureImage: '/assets/architecture/recsys-graph.png',
+        techStack: [
+            { name: 'LightGCN (PyTorch)' },
+            { name: 'Qdrant Vector DB' },
+            { name: 'FastAPI' },
+            { name: 'React + Mantine' },
+            { name: 'PostgreSQL' },
+            { name: 'Docker' },
+        ],
+        metrics: [
+            { label: 'Latency', value: '<50ms' },
+            { label: 'Users', value: '610' },
+            { label: 'NDCG@10', value: '0.42' },
+        ],
+        problem:
+            'Traditional recommendation systems struggle with user-item interaction sparsity and fail to capture high-order collaborative signals. Cold-start users receive poor recommendations.',
+        solution:
+            'Implemented LightGCN to learn user-item embeddings through graph convolution. Used Qdrant for sub-100ms vector similarity search. Added genre-based cold-start support for new users.',
+        githubUrl: 'https://github.com/Logm12/movie_recommendation_graphrec',
+    },
+
+    // === PROJECT 3: Real-time Algo Trading MLOps ===
+    {
+        id: 'hft-mlops',
+        title: 'Real-time Algo Trading MLOps',
+        description:
+            'High-frequency trading pipeline with automated drift detection and Feature Store. Ensemble ML models for market prediction.',
+        fullDescription:
+            'End-to-end MLOps system for cryptocurrency trading with real-time Kafka streaming, Feast feature store, and MLflow model versioning.',
+        tags: ['FinTech', 'Event-Driven', 'Kafka'],
+        image: '/images/hft-arch.svg',
+        architectureImage: '/assets/architecture/trading-mlops.png',
+        techStack: [
+            { name: 'XGBoost + LightGBM' },
+            { name: 'Apache Kafka' },
+            { name: 'Feast + Redis' },
+            { name: 'MLflow' },
+            { name: 'TimescaleDB' },
+            { name: 'Streamlit' },
+        ],
+        metrics: [
+            { label: 'Throughput', value: '500 msg/s' },
+            { label: 'Feature Latency', value: '<5ms' },
+            { label: 'Drift Detection', value: 'Real-time' },
+        ],
+        problem:
+            'Financial markets are volatile; models degrade quickly. Manual retraining is slow, and feature inconsistency between training and serving causes prediction errors.',
+        solution:
+            'Built event-driven architecture with Kafka for real-time streaming. Implemented Feast Feature Store for consistent feature serving. Automated model versioning with MLflow and drift detection.',
+        githubUrl: 'https://github.com/Logm12/HFT_great',
+    },
+
+    // === PROJECT 4: Customer Retention Command Center ===
+    {
+        id: 'customer-retention',
+        title: 'Customer Retention Command Center',
+        description:
+            'Marketing ROI optimization using Uplift Modeling (T-Learner) and Explainable AI. Identifies persuadable customers for targeted campaigns.',
+        fullDescription:
+            'Causal inference platform that segments customers into Persuadables, Sure Things, Lost Causes, and Sleeping Dogs. Maximizes campaign ROI by targeting only persuadable segments.',
+        tags: ['Causal Inference', 'Business Intelligence', 'React'],
+        image: '/images/retention-arch.svg',
+        architectureImage: '/assets/architecture/retention-causal.png',
+        techStack: [
+            { name: 'LightGBM T-Learner' },
+            { name: 'SHAP (Explainable AI)' },
+            { name: 'FastAPI' },
+            { name: 'React + Ant Design' },
+            { name: 'Polars' },
+            { name: 'Docker' },
+        ],
+        metrics: [
+            { label: 'Qini Score', value: '33.79' },
+            { label: 'Incremental ROI', value: '$19,122' },
+            { label: 'Segments', value: '4 Types' },
+        ],
+        problem:
+            'Traditional churn prediction wastes budget on customers who would stay anyway or are impossible to retain. Marketing campaigns have low ROI due to poor targeting.',
+        solution:
+            'Applied Causal Inference with T-Learner to estimate individual treatment effects. Segmented customers into 4 groups: Persuadables (target), Sure Things (ignore), Lost Causes (ignore), Sleeping Dogs (avoid).',
+        githubUrl: 'https://github.com/Logm12/Customer_Retention_CC',
+    },
+];
+
+// ============================================================================
+// EXPERIENCE TIMELINE
+// ============================================================================
+
+export const experiences: Experience[] = [
+    {
+        id: 'viettel',
+        period: '2025 - Present',
+        company: 'Viettel Networks',
+        role: 'AI Engineer Intern',
+        description:
+            'Deploying LLM on-premise, model quantization (GGUF, GPTQ), and building RAG systems for enterprise document retrieval.',
+        isActive: true,
+        skills: ['LLM', 'Quantization', 'RAG', 'FastAPI'],
+    },
+    {
+        id: 'worldquant',
+        period: '2023 - Present',
+        company: 'WorldQuant BRAIN',
+        role: 'Research Consultant',
+        description:
+            'Built 600+ quantitative alpha models using statistical arbitrage and machine learning techniques for financial markets.',
+        isActive: true,
+        skills: ['Python', 'Statistics', 'Time-series', 'Backtesting'],
+    },
+];
+
+// ============================================================================
+// SOCIAL LINKS
+// ============================================================================
+
+export const socialLinks: SocialLink[] = [
+    { name: 'GitHub', url: 'https://github.com/Logm12', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/longmac', icon: 'linkedin' },
+    { name: 'Email', url: 'mailto:longmac.dev@gmail.com', icon: 'mail' },
+];
+
+// ============================================================================
+// HONORS & AWARDS
+// ============================================================================
+
+export const honors: Honor[] = [
+    {
+        id: 'viettel-award',
+        title: ' National Finals of the MOS World Championship 2025',
+        issuer: 'Viettel 2025',
+        date: '01/07/2025',
+        image: '/assets/awards/2nd National Contest.png',
+        description: 'Competition for office IT solutions',
+    },
+    {
+        id: 'sinh-vien-5-tot',
+        title: 'STUDENT OF 05 MERITS',
+        issuer: 'University',
+        date: '28/10/2025',
+        image: '/assets/awards/5 Merits.png',
+        description: 'Excellence in academics and extracurriculars',
+    },
+    {
+        id: 'inter_olym',
+        title: 'Representatives from Vietnam participated in the final round of the Olympiad of Financial Security 2025 in Krasnoyarsk, Russia.',
+        issuer: 'Russia',
+        date: '03/10/2025',
+        image: '/assets/awards/IOFS.png',
+        description: 'Honored to represent Vietnam to taking part of an international contest',
+    },
+];
+
+// ============================================================================
+// SKILL RADAR DATA (For the Skill Radar Chart)
+// ============================================================================
+
+export const skillCategories: SkillCategory[] = [
+    {
+        name: 'AI/ML Core',
+        level: 90,
+        skills: ['Python', 'PyTorch', 'Scikit-learn', 'Pandas'],
+    },
+    {
+        name: 'Data Engineering',
+        level: 80,
+        skills: ['SQL', 'Kafka', 'PostgreSQL', 'Redis'],
+    },
+    {
+        name: 'LLM & NLP',
+        level: 85,
+        skills: ['HuggingFace', 'LangChain', 'QLoRA', 'GGUF'],
+    },
+    {
+        name: 'Deployment/Ops',
+        level: 85,
+        skills: ['Docker', 'FastAPI', 'MLflow', 'Kubernetes'],
+    },
+    {
+        name: 'Quantitative',
+        level: 75,
+        skills: ['Time-series', 'Backtesting', 'Statistics', 'Financial ML'],
+    },
+];
+
+// ============================================================================
+// TYPEWRITER PHRASES
+// ============================================================================
+
+export const typewriterPhrases = [
+    '> Initializing System...',
+    '> Loading AI Models...',
+    '> Building Scalable Solutions...',
+    '> Hello, I build End-to-End AI Systems.',
+];
+
+// ============================================================================
+// ABOUT ME CONTENT
+// ============================================================================
+
+export const aboutMeContent = {
+    headline: 'The Hybrid Engineer',
+    subtitle: 'Quantitative Mindset × System Engineering',
+    paragraphs: [
+        'I combine Quantitative Thinking from WorldQuant with System Engineering expertise from Viettel Networks.',
+        "I don't just train models for high accuracy — I optimize them to run real-time on limited hardware and deliver measurable business ROI.",
+    ],
+    highlights: [
+        { label: 'WorldQuant', value: '600+ Alpha Models' },
+        { label: 'Viettel', value: 'Edge AI Deployment' },
+        { label: 'Focus', value: 'Production-Ready ML' },
+    ],
+};
