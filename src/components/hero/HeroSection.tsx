@@ -142,7 +142,7 @@ function HeroTypewriter({ text }: { text: string }) {
 
 /** CTA buttons */
 function HeroCTAButtons({ onViewProjects }: { onViewProjects: () => void }) {
-    const handleDownloadCV = () => window.open('/resume.pdf', '_blank');
+    const handleDownloadCV = () => window.open('/assets/resume.pdf', '_blank');
 
     return (
         <motion.div
