@@ -4,38 +4,21 @@ import { motion } from 'framer-motion';
 import { skillCategories } from '@/data/projects';
 import { SkillCategory } from '@/types';
 
-// ============================================================================
-// CONSTANTS
-// ============================================================================
-
 const CHART_CONFIG = {
-    size: 400, // SVG viewport size
-    center: 200, // Center point
-    maxRadius: 150, // Maximum radius for the chart
-    levels: 5, // Number of concentric circles
+    size: 400,
+    center: 200,
+    maxRadius: 150,
+    levels: 5,
     animationDuration: 1,
 } as const;
 
-// Colors for gradient effect
 const GRADIENT_COLORS = {
-    fill: 'rgba(236, 72, 153, 0.3)', // Pink with transparency
-    stroke: 'rgb(236, 72, 153)', // Solid pink
-    lightFill: 'rgba(6, 182, 212, 0.2)', // Cyan for light mode
+    fill: 'rgba(236, 72, 153, 0.3)',
+    stroke: 'rgb(236, 72, 153)',
+    lightFill: 'rgba(6, 182, 212, 0.2)',
     lightStroke: 'rgb(6, 182, 212)',
 } as const;
 
-// ============================================================================
-// UTILITY FUNCTIONS (Testable, pure functions)
-// ============================================================================
-
-/**
- * Calculate point position on radar chart
- * @param index - Category index
- * @param total - Total number of categories
- * @param radius - Distance from center
- * @param cx - Center X
- * @param cy - Center Y
- */
 function calculatePoint(
     index: number,
     total: number,
@@ -50,9 +33,6 @@ function calculatePoint(
     };
 }
 
-/**
- * Generate SVG path for polygon
- */
 function generatePolygonPath(categories: SkillCategory[]): string {
     const total = categories.length;
     const points = categories.map((cat, index) => {
@@ -63,11 +43,6 @@ function generatePolygonPath(categories: SkillCategory[]): string {
     return `M ${points.join(' L ')} Z`;
 }
 
-// ============================================================================
-// SUB-COMPONENTS
-// ============================================================================
-
-/** Concentric circles (grid) for radar chart */
 function RadarGrid({ levels }: { levels: number }) {
     return (
         <>
@@ -90,7 +65,6 @@ function RadarGrid({ levels }: { levels: number }) {
     );
 }
 
-/** Axis lines from center to each category */
 function RadarAxes({ categories }: { categories: SkillCategory[] }) {
     const total = categories.length;
     return (
@@ -114,10 +88,9 @@ function RadarAxes({ categories }: { categories: SkillCategory[] }) {
     );
 }
 
-/** Labels for each category axis */
 function RadarLabels({ categories }: { categories: SkillCategory[] }) {
     const total = categories.length;
-    const labelOffset = 25; // Distance beyond the max radius
+    const labelOffset = 25;
 
     return (
         <>
@@ -144,7 +117,6 @@ function RadarLabels({ categories }: { categories: SkillCategory[] }) {
     );
 }
 
-/** Animated data polygon */
 function RadarPolygon({ categories }: { categories: SkillCategory[] }) {
     const pathData = generatePolygonPath(categories);
 
@@ -163,7 +135,6 @@ function RadarPolygon({ categories }: { categories: SkillCategory[] }) {
     );
 }
 
-/** Data points on each axis */
 function RadarPoints({ categories }: { categories: SkillCategory[] }) {
     const total = categories.length;
 
@@ -191,7 +162,6 @@ function RadarPoints({ categories }: { categories: SkillCategory[] }) {
     );
 }
 
-/** Skills list for a category */
 function SkillsList({ category }: { category: SkillCategory }) {
     return (
         <motion.div
@@ -215,52 +185,34 @@ function SkillsList({ category }: { category: SkillCategory }) {
     );
 }
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
-
-/**
- * Skill Radar Chart - SVG-based radar/spider chart
- *
- * Displays skill proficiency across 5 categories:
- * - AI/ML Core
- * - Data Engineering
- * - LLM & NLP
- * - Deployment/Ops
- * - Quantitative
- *
- * Refactored for:
- * - Pure utility functions for calculations
- * - Modular sub-components
- * - Theme-aware styling
- */
 export function SkillRadar() {
     const categories = skillCategories;
 
     return (
-        <section id="skills" className="py-24 px-6">
+        <section id="skills" className="py-24 px-6" aria-labelledby="skills-heading">
             <div className="max-w-6xl mx-auto">
-                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold gradient-text-purple italic mb-4">
+                    <h2 id="skills-heading" className="text-4xl md:text-5xl font-bold gradient-text-purple italic mb-4">
                         Skill Radar
                     </h2>
                     <p className="text-muted">Full-stack AI Engineer skill distribution</p>
                 </motion.div>
 
-                {/* Chart and Skills Grid */}
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Radar Chart */}
                     <div className="flex justify-center">
                         <svg
                             viewBox={`0 0 ${CHART_CONFIG.size} ${CHART_CONFIG.size}`}
                             className="w-full max-w-md text-foreground"
+                            role="img"
+                            aria-label="Radar chart showing skill proficiency across 5 categories"
                         >
+                            <title>Skill Radar Chart</title>
+                            <desc>A radar chart displaying proficiency levels in AI/ML Core, Data Engineering, LLM & NLP, Deployment/Ops, and Quantitative skills.</desc>
                             <RadarGrid levels={CHART_CONFIG.levels} />
                             <RadarAxes categories={categories} />
                             <RadarPolygon categories={categories} />
@@ -269,7 +221,6 @@ export function SkillRadar() {
                         </svg>
                     </div>
 
-                    {/* Skills List Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {categories.map((category) => (
                             <SkillsList key={category.name} category={category} />

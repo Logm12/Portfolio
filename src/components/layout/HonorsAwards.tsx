@@ -5,10 +5,6 @@ import Image from 'next/image';
 import { honors } from '@/data/projects';
 import { Honor } from '@/types';
 
-// ============================================================================
-// SUB-COMPONENTS (Modular design)
-// ============================================================================
-
 /** Individual award/honor card with large image display */
 function HonorCard({ honor, index }: { honor: Honor; index: number }) {
     const hasImage = honor.image && honor.image !== '';
@@ -33,8 +29,8 @@ function HonorCard({ honor, index }: { honor: Honor; index: number }) {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center text-muted">
-                        <span className="text-6xl">🏆</span>
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-500/20">
+                        <span className="text-4xl text-muted">Award</span>
                     </div>
                 )}
 
@@ -65,10 +61,6 @@ function HonorCard({ honor, index }: { honor: Honor; index: number }) {
         </motion.div>
     );
 }
-
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 
 /**
  * Honors & Awards Section - Professional grid display

@@ -1,38 +1,28 @@
-# 🚀 Portfolio Website - Mạc Phạm Thiên Long
+# Portfolio Website - Mac Pham Thien Long
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.1-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com/)
 
-> A modern, animated portfolio showcasing AI/ML and Data Science projects.
+A modern, animated portfolio showcasing AI/ML and Data Science projects.
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| 🎨 **Figma-Inspired Design** | Glassmorphism, gradients, micro-animations |
-| 🌓 **Dark/Light Mode** | Theme-aware with CSS variables |
-| 📊 **Skill Radar Chart** | SVG-based 5-axis radar visualization |
-| 🏆 **Honors Display** | Award certificates with large images |
-| 🎬 **Animated Background** | Neural network-style canvas animation |
-| ⚡ **Fast & Responsive** | Next.js with Turbopack, optimized images |
+| Figma-Inspired Design | Glassmorphism, gradients, micro-animations |
+| Dark/Light Mode | Theme-aware with CSS variables |
+| Skill Radar Chart | SVG-based 5-axis radar visualization |
+| Honors Display | Award certificates with large images |
+| Animated Background | Neural network-style canvas animation |
+| Fast & Responsive | Next.js with Turbopack, optimized images |
 
 ---
 
-## 🖼️ Screenshots
-
-### Hero Section (Dark Mode)
-![Hero Dark Mode](file:///C:/Users/longm/.gemini/antigravity/brain/303c329d-0319-4938-9262-3ffa2d60ceb7/hero_section_dark_mode_1768740071119.png)
-
-### Honors & Awards
-![Honors Section](file:///C:/Users/longm/.gemini/antigravity/brain/303c329d-0319-4938-9262-3ffa2d60ceb7/honors_awards_section_verification_1768746003863.png)
-
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone repository
@@ -42,15 +32,15 @@ cd Portfolio
 # Install dependencies
 npm install
 
-# Run development server
+# Run development server (port 4200)
 npm run dev
 
-# Open http://localhost:3000
+# Open http://localhost:4200
 ```
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio-website/
@@ -77,7 +67,7 @@ portfolio-website/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -90,7 +80,7 @@ portfolio-website/
 
 ---
 
-## 🎨 Website Sections
+## Website Sections
 
 1. **Hero** - Name, title, animated typewriter, CTA buttons
 2. **Tech Stack Marquee** - Scrolling technology logos
@@ -103,7 +93,7 @@ portfolio-website/
 
 ---
 
-## 🌐 Deployment on Vercel
+## Deployment on Vercel
 
 ### Option 1: One-Click Deploy
 
@@ -120,7 +110,7 @@ portfolio-website/
 
 ---
 
-## 📝 Customization
+## Customization
 
 ### Add Your Content
 
@@ -143,21 +133,21 @@ Edit CSS variables in `src/app/globals.css`:
 
 ---
 
-## 👤 Author
+## Author
 
-**Mạc Phạm Thiên Long**
+**Mac Pham Thien Long**
 
-- 🏢 AI Engineer Intern @ Viettel Networks
-- 📊 Research Consultant @ WorldQuant BRAIN
-- 📧 longmac.dev@gmail.com
-- 🔗 [GitHub](https://github.com/Logm12)
+- AI Engineer Intern @ Viettel Networks
+- Research Consultant @ WorldQuant BRAIN
+- Email: longmac.dev@gmail.com
+- GitHub: [github.com/Logm12](https://github.com/Logm12)
 
 ---
 
-## 📄 License
+## License
 
 MIT License - feel free to use for your own portfolio!
 
 ---
 
-<p align="center">Made with ❤️ by Mạc Phạm Thiên Long</p>
+Made with care by Mac Pham Thien Long

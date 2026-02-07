@@ -75,8 +75,8 @@ function TechIcon({ name }: { name: string }) {
     }
 
     return (
-        <span className="text-4xl cursor-pointer hover:scale-110 transition-transform" title={name}>
-            💻
+        <span className="text-sm text-muted font-medium cursor-pointer hover:text-foreground transition-colors" title={name}>
+            {name}
         </span>
     );
 }

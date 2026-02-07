@@ -66,7 +66,7 @@ export function Footer() {
                 >
                     <p className="text-muted text-sm">
                         Made by{' '}
-                        <span className="gradient-text-pink font-semibold">Mạc Phạm Thiên Long</span>
+                        <span className="gradient-text-pink font-semibold">Mac Pham Thien Long</span>
                     </p>
                 </motion.div>
             </div>

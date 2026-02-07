@@ -7,24 +7,18 @@ import { useTypewriter } from '@/hooks/useTypewriter';
 import { typewriterPhrases } from '@/data/projects';
 import { Brain, Cpu, Zap, ChevronDown, LucideIcon } from 'lucide-react';
 
-// ============================================================================
-// TYPES & CONSTANTS (Separating configuration from logic)
-// ============================================================================
-
 interface HeroIcon {
     Icon: LucideIcon;
     label: string;
     color: string;
 }
 
-/** Icon configuration - easily modifiable */
 const HERO_ICONS: readonly HeroIcon[] = [
     { Icon: Brain, label: 'Deep Learning', color: 'from-pink-500 to-purple-500' },
     { Icon: Cpu, label: 'System Design', color: 'from-cyan-500 to-blue-500' },
     { Icon: Zap, label: 'High Performance', color: 'from-purple-500 to-pink-500' },
 ] as const;
 
-/** Animation configuration - centralized for easy testing */
 const ANIMATION_CONFIG = {
     fadeIn: { initial: { opacity: 0 }, animate: { opacity: 1 } },
     slideUp: { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 } },
@@ -40,11 +34,6 @@ const ANIMATION_CONFIG = {
     },
 } as const;
 
-// ============================================================================
-// SUB-COMPONENTS (Modular, testable, reusable)
-// ============================================================================
-
-/** Hero name with gradient styling */
 function HeroName() {
     return (
         <motion.h1
@@ -52,14 +41,13 @@ function HeroName() {
             transition={{ delay: ANIMATION_CONFIG.delays.name, duration: 0.6 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
         >
-            <span className="gradient-text-pink">MẠC PHẠM</span>
+            <span className="gradient-text-pink">MAC PHAM</span>
             <br />
-            <span className="gradient-text-pink">THIÊN LONG</span>
+            <span className="gradient-text-pink">THIEN LONG</span>
         </motion.h1>
     );
 }
 
-/** Hero subtitle */
 function HeroSubtitle() {
     return (
         <motion.div
@@ -73,7 +61,6 @@ function HeroSubtitle() {
     );
 }
 
-/** Single icon item - theme aware with gradient border */
 function HeroIconItem({ icon, index }: { icon: HeroIcon; index: number }) {
     const { Icon, label, color } = icon;
 
@@ -94,7 +81,6 @@ function HeroIconItem({ icon, index }: { icon: HeroIcon; index: number }) {
     );
 }
 
-/** Icon row container */
 function HeroIconRow() {
     return (
         <motion.div
@@ -109,7 +95,6 @@ function HeroIconRow() {
     );
 }
 
-/** Role description */
 function HeroRole() {
     return (
         <motion.div
@@ -123,7 +108,6 @@ function HeroRole() {
     );
 }
 
-/** Typewriter terminal box */
 function HeroTypewriter({ text }: { text: string }) {
     return (
         <motion.div
@@ -140,7 +124,6 @@ function HeroTypewriter({ text }: { text: string }) {
     );
 }
 
-/** CTA buttons */
 function HeroCTAButtons({ onViewProjects }: { onViewProjects: () => void }) {
     const handleDownloadCV = () => window.open('/assets/resume.pdf', '_blank');
 
@@ -160,14 +143,13 @@ function HeroCTAButtons({ onViewProjects }: { onViewProjects: () => void }) {
     );
 }
 
-/** Scroll indicator arrow - POSITIONED SEPARATELY from content */
 function ScrollIndicator({ onClick }: { onClick: () => void }) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: ANIMATION_CONFIG.delays.scroll }}
-            className="mt-16" // Margin from content, NOT absolute positioning
+            className="mt-16"
         >
             <motion.button
                 animate={{ y: [0, 8, 0] }}
@@ -182,18 +164,6 @@ function ScrollIndicator({ onClick }: { onClick: () => void }) {
     );
 }
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
-
-/**
- * Hero Section - Figma-inspired design with theme-aware styling
- *
- * Refactored for:
- * - Modularity: Each UI element is a separate component
- * - Testability: Components accept props, can be tested in isolation
- * - Maintainability: Configuration separated from logic
- */
 export function HeroSection() {
     const { displayText } = useTypewriter(typewriterPhrases, 60, 40, 1500);
 
@@ -203,7 +173,6 @@ export function HeroSection() {
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center py-12">
-            {/* Main content wrapper - uses flex flow, NOT absolute positioning */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -216,8 +185,6 @@ export function HeroSection() {
                 <HeroRole />
                 <HeroTypewriter text={displayText} />
                 <HeroCTAButtons onViewProjects={scrollToProjects} />
-
-                {/* Scroll indicator - INSIDE the flow, AFTER buttons with spacing */}
                 <ScrollIndicator onClick={scrollToProjects} />
             </motion.div>
         </section>

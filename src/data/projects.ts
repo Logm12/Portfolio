@@ -1,15 +1,14 @@
-// ============================================================================
-// PROJECT DATA
-// Centralized data file for portfolio content
-// Refactored for modularity and easy maintenance
-// ============================================================================
+/**
+ * Portfolio Content Data
+ * Centralized data file for all portfolio content
+ */
 
 import { Project, Experience, SocialLink, TechItem, Honor, SkillCategory } from '@/types';
 
-// ============================================================================
-// TECH STACK MARQUEE ITEMS
-// ============================================================================
-
+/**
+ * Technology Stack Items
+ * Displayed in the marquee section
+ */
 export const techStackItems: TechItem[] = [
     { name: 'Docker', category: 'deployment' },
     { name: 'Kubernetes', category: 'deployment' },
@@ -25,12 +24,10 @@ export const techStackItems: TechItem[] = [
     { name: 'TypeScript', category: 'core' },
 ];
 
-// ============================================================================
-// FEATURED PROJECTS (With Viettel AI as #1 Spotlight)
-// ============================================================================
-
+/**
+ * Featured Projects
+ */
 export const projects: Project[] = [
-    // === SPOTLIGHT PROJECT: Viettel AI Coding Assistant ===
     {
         id: 'viettel-llm',
         title: 'Viettel AI Coding Assistant',
@@ -59,11 +56,9 @@ export const projects: Project[] = [
             'Cloud-based code completion (GitHub Copilot) requires constant internet, has 200-500ms latency, raises privacy concerns for enterprise code, and incurs $10-20/month subscription costs.',
         solution:
             'Fine-tuned Qwen2.5-Coder with QLoRA on 300K+ code files, aligned with DPO, quantized to 4-bit GGUF. Deployed as OpenAI-compatible API server. Achieves 20-50ms latency on CPU, works offline, zero external dependencies.',
-        githubUrl: '#', // Will be updated
+        githubUrl: '#',
         isSpotlight: true,
     },
-
-    // === PROJECT 2: Graph-Based Movie RecSys ===
     {
         id: 'graphrec',
         title: 'Graph-Based Movie RecSys',
@@ -93,8 +88,6 @@ export const projects: Project[] = [
             'Implemented LightGCN to learn user-item embeddings through graph convolution. Used Qdrant for sub-100ms vector similarity search. Added genre-based cold-start support for new users.',
         githubUrl: 'https://github.com/Logm12/movie_recommendation_graphrec',
     },
-
-    // === PROJECT 3: Real-time Algo Trading MLOps ===
     {
         id: 'hft-mlops',
         title: 'Real-time Algo Trading MLOps',
@@ -124,8 +117,6 @@ export const projects: Project[] = [
             'Built event-driven architecture with Kafka for real-time streaming. Implemented Feast Feature Store for consistent feature serving. Automated model versioning with MLflow and drift detection.',
         githubUrl: 'https://github.com/Logm12/HFT_great',
     },
-
-    // === PROJECT 4: Customer Retention Command Center ===
     {
         id: 'customer-retention',
         title: 'Customer Retention Command Center',
@@ -157,10 +148,9 @@ export const projects: Project[] = [
     },
 ];
 
-// ============================================================================
-// EXPERIENCE TIMELINE
-// ============================================================================
-
+/**
+ * Work Experience Timeline
+ */
 export const experiences: Experience[] = [
     {
         id: 'viettel',
@@ -184,24 +174,22 @@ export const experiences: Experience[] = [
     },
 ];
 
-// ============================================================================
-// SOCIAL LINKS
-// ============================================================================
-
+/**
+ * Social Links
+ */
 export const socialLinks: SocialLink[] = [
     { name: 'GitHub', url: 'https://github.com/Logm12', icon: 'github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/longmac', icon: 'linkedin' },
     { name: 'Email', url: 'mailto:longmac.dev@gmail.com', icon: 'mail' },
 ];
 
-// ============================================================================
-// HONORS & AWARDS
-// ============================================================================
-
+/**
+ * Honors and Awards
+ */
 export const honors: Honor[] = [
     {
         id: 'viettel-award',
-        title: ' National Finals of the MOS World Championship 2025',
+        title: 'National Finals of the MOS World Championship 2025',
         issuer: 'Viettel 2025',
         date: '01/07/2025',
         image: '/assets/awards/2nd National Contest.png',
@@ -209,7 +197,7 @@ export const honors: Honor[] = [
     },
     {
         id: 'sinh-vien-5-tot',
-        title: 'STUDENT OF 05 MERITS',
+        title: 'Student of 5 Merits',
         issuer: 'University',
         date: '28/10/2025',
         image: '/assets/awards/5 Merits.png',
@@ -217,18 +205,17 @@ export const honors: Honor[] = [
     },
     {
         id: 'inter_olym',
-        title: 'Representatives from Vietnam participated in the final round of the Olympiad of Financial Security 2025 in Krasnoyarsk, Russia.',
+        title: 'Vietnam Representative at International Olympiad of Financial Security 2025',
         issuer: 'Russia',
         date: '03/10/2025',
         image: '/assets/awards/IOFS.png',
-        description: 'Honored to represent Vietnam to taking part of an international contest',
+        description: 'Represented Vietnam in the final round in Krasnoyarsk, Russia',
     },
 ];
 
-// ============================================================================
-// SKILL RADAR DATA (For the Skill Radar Chart)
-// ============================================================================
-
+/**
+ * Skill Categories for Radar Chart
+ */
 export const skillCategories: SkillCategory[] = [
     {
         name: 'AI/ML Core',
@@ -257,27 +244,28 @@ export const skillCategories: SkillCategory[] = [
     },
 ];
 
-// ============================================================================
-// TYPEWRITER PHRASES
-// ============================================================================
-
+/**
+ * Typewriter Phrases for Hero Section
+ */
 export const typewriterPhrases = [
-    '> Initializing System...',
-    '> Loading AI Models...',
-    '> Building Scalable Solutions...',
-    '> Hello, I build End-to-End AI Systems.',
+    'Initializing System...',
+    'Loading Models...',
+    'Building Scalable Solutions...',
+    'Hello, I build End-to-End AI Systems.',
 ];
 
-// ============================================================================
-// ABOUT ME CONTENT
-// ============================================================================
-
+/**
+ * About Me Section Content
+ */
 export const aboutMeContent = {
-    headline: 'The Hybrid Engineer',
-    subtitle: 'Quantitative Mindset × System Engineering',
+    headline: 'About Me',
+    profileImage: '/assets/profile.svg',
+    subtitle: 'AI/ML Engineer • Problem Solver • Continuous Learner',
+    quote: 'Engineering the future with AI, one neural network at a time.',
     paragraphs: [
-        'I combine Quantitative Thinking from WorldQuant with System Engineering expertise from Viettel Networks.',
-        "I don't just train models for high accuracy — I optimize them to run real-time on limited hardware and deliver measurable business ROI.",
+        'Applying foundational knowledge in Machine Learning, Deep Learning, data processing, and logical thinking to solve real-world business problems.',
+        'Seeking opportunities to participate in large-scale data processing projects or AI application development.',
+        'Aiming to become a full-time employee after the internship period, delivering practical value to the company.',
     ],
     highlights: [
         { label: 'WorldQuant', value: '600+ Alpha Models' },
