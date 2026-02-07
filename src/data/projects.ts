@@ -146,6 +146,64 @@ export const projects: Project[] = [
             'Applied Causal Inference with T-Learner to estimate individual treatment effects. Segmented customers into 4 groups: Persuadables (target), Sure Things (ignore), Lost Causes (ignore), Sleeping Dogs (avoid).',
         githubUrl: 'https://github.com/Logm12/Customer_Retention_CC',
     },
+
+    {
+        id: 'emotion-music-gen',
+        title: 'Emotion-Driven Music Generation',
+        description:
+            'Generative AI system that converts Vietnamese text into MIDI melodies based on detected emotions.',
+        fullDescription:
+            'Research and development of an End-to-End model for text-to-music generation. Utilized PhoBERT (State-of-the-art for Vietnamese) for emotion classification with ~90% accuracy, integrated with LSTM/Bi-LSTM networks for melody generation contextually aligned with emotions. Applied Data Augmentation on the VGMIDI dataset to enhance model diversity.',
+        tags: ['NLP', 'Generative AI', 'Research'],
+        image: '/assets/arch-music-gen.svg', // Using the architecture SVG as the main image for now
+        architectureImage: '/assets/arch-music-gen.svg',
+        techStack: [
+            { name: 'PhoBERT' },
+            { name: 'LSTM/Bi-LSTM' },
+            { name: 'Python' },
+            { name: 'Data Augmentation' },
+            { name: 'PyTorch' },
+        ],
+        metrics: [
+            { label: 'Emotion Accuracy', value: '90.0%' },
+            { label: 'Architecture', value: 'End-to-End' },
+            { label: 'Dataset', value: 'VGMIDI + Custom' },
+        ],
+        problem:
+            'Existing text-to-music systems often lack emotional depth or fail to support specific languages like Vietnamese effectively.',
+        solution:
+            'Combined PhoBERT for robust emotion extraction from Vietnamese text with Bi-LSTM sequence modeling to generate emotionally resonant musical patterns.',
+        githubUrl: '#',
+    },
+
+    {
+        id: 'student-performance-clustering',
+        title: 'Student Performance Clustering',
+        description:
+            'Automated student segmentation based on academic performance using K-Means Clustering.',
+        fullDescription:
+            'Data Science project applying Unsupervised Learning to categorize student profiles based on grades and learning behaviors. Process includes: Data Cleaning, Elbow Method for optimal K determination, K-Means implementation, and Data Visualization to support personalized educational roadmaps.',
+        tags: ['Data Science', 'Machine Learning', 'Academic'],
+        image: '/assets/arch-student-cluster.svg',
+        architectureImage: '/assets/arch-student-cluster.svg',
+        techStack: [
+            { name: 'Python' },
+            { name: 'K-Means' },
+            { name: 'Pandas' },
+            { name: 'Matplotlib' },
+            { name: 'Scikit-learn' },
+        ],
+        metrics: [
+            { label: 'Algorithm', value: 'K-Means' },
+            { label: 'Role', value: 'Team Leader' },
+            { label: 'Outcome', value: 'Automated Profiling' },
+        ],
+        problem:
+            'Schools lack automated tools to identify student groups with similar learning patterns for targeted intervention.',
+        solution:
+            'Applied K-Means clustering to group students into distinct segments, enabling educators to design tailored support strategies.',
+        githubUrl: '#',
+    },
 ];
 
 /**
