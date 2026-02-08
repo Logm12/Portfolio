@@ -114,7 +114,7 @@ export function AboutMe() {
 
                     {/* Left Column: Image (Desktop) / Top (Mobile) */}
                     <div className="md:col-span-5 flex justify-center md:justify-end order-1 md:order-1">
-                        <ProfileImage src={profileImage || '/placeholder-profile.jpg'} />
+                        <ProfileImage src={profileImage || '/assets/info/person.jpg'} />
                     </div>
 
                     {/* Right Column: Content */}

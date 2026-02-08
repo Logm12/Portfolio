@@ -36,8 +36,8 @@ export const projects: Project[] = [
         fullDescription:
             'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses Fill-in-the-Middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
         tags: ['LLM', 'On-device AI', 'Quantization', 'Viettel Internship'],
-        image: '/images/viettel-llm.svg',
-        architectureImage: '/assets/architecture/viettel-llm.png',
+        image: '/assets/architecture/viettel-llm.svg',
+        architectureImage: '/assets/architecture/viettel-llm.svg',
         techStack: [
             { name: 'Qwen2.5-Coder-0.5B' },
             { name: 'QLoRA + DPO' },
@@ -67,8 +67,8 @@ export const projects: Project[] = [
         fullDescription:
             'Implemented graph neural network for recommendation, capturing multi-hop neighborhood information. Vector similarity search with Qdrant for sub-100ms responses.',
         tags: ['Deep Learning', 'Microservices', 'High Performance'],
-        image: '/images/graphrec-arch.svg',
-        architectureImage: '/assets/architecture/recsys-graph.png',
+        image: '/assets/architecture/Movie-rec-diagram.png',
+        architectureImage: '/assets/architecture/Movie-rec-diagram.png',
         techStack: [
             { name: 'LightGCN (PyTorch)' },
             { name: 'Qdrant Vector DB' },
@@ -96,8 +96,8 @@ export const projects: Project[] = [
         fullDescription:
             'End-to-end MLOps system for cryptocurrency trading with real-time Kafka streaming, Feast feature store, and MLflow model versioning.',
         tags: ['FinTech', 'Event-Driven', 'Kafka'],
-        image: '/images/hft-arch.svg',
-        architectureImage: '/assets/architecture/trading-mlops.png',
+        image: '/assets/architecture/HFT_archtechture_diagrams.png',
+        architectureImage: '/assets/architecture/HFT_archtechture_diagrams.png',
         techStack: [
             { name: 'XGBoost + LightGBM' },
             { name: 'Apache Kafka' },
@@ -125,8 +125,8 @@ export const projects: Project[] = [
         fullDescription:
             'Causal inference platform that segments customers into Persuadables, Sure Things, Lost Causes, and Sleeping Dogs. Maximizes campaign ROI by targeting only persuadable segments.',
         tags: ['Causal Inference', 'Business Intelligence', 'React'],
-        image: '/images/retention-arch.svg',
-        architectureImage: '/assets/architecture/retention-causal.png',
+        image: '/assets/architecture/Customer_Architechture Diagram.png',
+        architectureImage: '/assets/architecture/Customer_Architechture Diagram.png',
         techStack: [
             { name: 'LightGBM T-Learner' },
             { name: 'SHAP (Explainable AI)' },
@@ -155,7 +155,7 @@ export const projects: Project[] = [
         fullDescription:
             'Research and development of an End-to-End model for text-to-music generation. Utilized PhoBERT (State-of-the-art for Vietnamese) for emotion classification with ~90% accuracy, integrated with LSTM/Bi-LSTM networks for melody generation contextually aligned with emotions. Applied Data Augmentation on the VGMIDI dataset to enhance model diversity.',
         tags: ['NLP', 'Generative AI', 'Research'],
-        image: '/assets/arch-music-gen.svg', // Using the architecture SVG as the main image for now
+        image: '/assets/arch-music-gen.svg',
         architectureImage: '/assets/arch-music-gen.svg',
         techStack: [
             { name: 'PhoBERT' },
@@ -317,7 +317,7 @@ export const typewriterPhrases = [
  */
 export const aboutMeContent = {
     headline: 'About Me',
-    profileImage: '/assets/profile.svg',
+    profileImage: '/assets/info/person.svg',
     subtitle: 'AI/ML Engineer • Problem Solver • Continuous Learner',
     quote: 'Engineering the future with AI, one neural network at a time.',
     paragraphs: [

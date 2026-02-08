@@ -118,6 +118,22 @@ portfolio-website/
 2. **Awards**: Add images to `public/assets/awards/`
 3. **Social Links**: Update `socialLinks` in `projects.ts`
 
+### Managing Images (Architecture & Projects)
+
+To add new images (e.g., architecture diagrams) and avoid 404 errors:
+
+1.  **Placement**: Save your image in `public/assets/architecture/`.
+    *   Example: `public/assets/architecture/my-new-diagram.png`
+2.  **Naming**: Use `kebab-case` (lowercase with hyphens) for best compatibility.
+    *   ✅ `my-diagram.png`
+    *   ⚠️ `My Diagram.png` (Avoid spaces if possible)
+3.  **Update Code**: In `src/data/projects.ts`, use the **exact** filename:
+    ```typescript
+    image: '/assets/architecture/my-diagram.png',
+    architectureImage: '/assets/architecture/my-diagram.png',
+    ```
+    *Note: The path must start with `/assets/` (not `public/assets/`).*
+
 ### Change Theme Colors
 
 Edit CSS variables in `src/app/globals.css`:
