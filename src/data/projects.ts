@@ -86,7 +86,8 @@ export const projects: Project[] = [
             'Traditional recommendation systems struggle with user-item interaction sparsity and fail to capture high-order collaborative signals. Cold-start users receive poor recommendations.',
         solution:
             'Implemented LightGCN to learn user-item embeddings through graph convolution. Used Qdrant for sub-100ms vector similarity search. Added genre-based cold-start support for new users.',
-        githubUrl: 'https://github.com/Logm12/movie_recommendation_system'
+        githubUrl: 'https://github.com/Logm12/movie_recommendation_system',
+    },
     {
         id: 'hft-mlops',
         title: 'Real-time Algo Trading MLOps',
