@@ -32,7 +32,7 @@ export const projects: Project[] = [
         id: 'viettel-llm',
         title: 'Viettel AI Coding Assistant',
         description:
-            'Edge-optimized code completion running on CPU with 20-50ms latency. Privacy-first, zero cloud dependency.',
+            'Edge-optimized code completion running on CPU with 170ms latency. Privacy-first, zero cloud dependency.',
         fullDescription:
             'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses Fill-in-the-Middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
         tags: ['LLM', 'On-device AI', 'Quantization', 'Viettel Internship'],
