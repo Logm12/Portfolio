@@ -212,17 +212,17 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
     {
         id: 'viettel',
-        period: '2025 - Present',
+        period: '11/2025-12/2025',
         company: 'Viettel Networks',
         role: 'AI Engineer Intern',
         description:
-            'Deploying LLM on-premise, model quantization (GGUF, GPTQ), and building RAG systems for enterprise document retrieval.',
+            'Deploying LLM on-premise, model quantization (GGUF), and building RAG systems for enterprise document retrieval.',
         isActive: true,
         skills: ['LLM', 'Quantization', 'RAG', 'FastAPI'],
     },
     {
         id: 'worldquant',
-        period: '2023 - Present',
+        period: '07/2023 - Present',
         company: 'WorldQuant BRAIN',
         role: 'Research Consultant',
         description:
@@ -319,11 +319,8 @@ export const aboutMeContent = {
     headline: 'About Me',
     profileImage: '/assets/info/person.jpg',
     subtitle: 'AI/ML Engineer • Problem Solver • Continuous Learner',
-    quote: 'Engineering the future with AI, one neural network at a time.',
     paragraphs: [
-        'Applying foundational knowledge in Machine Learning, Deep Learning, data processing, and logical thinking to solve real-world business problems.',
-        'Seeking opportunities to participate in large-scale data processing projects or AI application development.',
-        'Aiming to become a full-time employee after the internship period, delivering practical value to the company.',
+        'I am an aspiring AI Engineer with a strong foundation in Deep learning and System optimization. I have a proven track record of bridging the gap between research and production, notably in deploying high-performance LLMs on edge devices and developing scalable quantitative models. I am also passionate about MLOps and High-performance Computing, seeking to leverage technical expertise to build impactful, data-driven solutions in a world-class engineering environment.'
     ],
     highlights: [
         { label: 'WorldQuant', value: '600+ Alpha Models' },
