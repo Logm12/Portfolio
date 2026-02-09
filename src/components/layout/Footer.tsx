@@ -65,8 +65,7 @@ export function Footer() {
                     className="text-center"
                 >
                     <p className="text-muted text-sm">
-                        Made by{' '}
-                        <span className="gradient-text-pink font-semibold">Mac Pham Thien Long</span>
+                        &copy; 2025 Mac Pham Thien Long. All rights reserved.
                     </p>
                 </motion.div>
             </div>

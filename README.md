@@ -49,20 +49,17 @@ portfolio-website/
 │       ├── architecture/    # Project architecture diagrams
 │       └── awards/          # Certificate images
 ├── src/
-│   ├── app/                 # Next.js App Router
-│   │   ├── globals.css      # Theme variables & styles
-│   │   ├── layout.tsx       # Root layout
-│   │   └── page.tsx         # Main page
-│   ├── components/
-│   │   ├── hero/            # Hero section components
-│   │   ├── layout/          # Layout components (TechStack, SkillRadar, etc.)
-│   │   ├── projects/        # Project cards and modal
-│   │   └── ui/              # Reusable UI components
-│   ├── data/
-│   │   └── projects.ts      # All portfolio data
-│   ├── hooks/               # Custom React hooks
-│   └── types/               # TypeScript interfaces
-└── docs/                    # Documentation
+## 📂 Project Structure
+
+For a detailed breakdown of the file system and component responsibilities, please refer to [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md).
+
+```bash
+src/
+├── app/                 # Next.js App Router (Pages & Layout)
+├── components/          # Reusable UI Components
+├── data/                # Centralized Content (Projects, Exp)
+├── hooks/               # Custom React Hooks
+└── types/               # TypeScript Definitions
 ```
 
 ---

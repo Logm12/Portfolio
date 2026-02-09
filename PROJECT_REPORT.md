@@ -198,3 +198,20 @@ function calculatePoint(index: number, total: number, radius: number) {
 ---
 
 *Report generated on 18/01/2026*
+
+---
+
+## 8. Recent Updates (February 2026)
+
+### 8.1 Feature Enhancements
+-   **Video Support**: Added support for `.mp4` demo videos in project modals. Projects can now display a video walkthough instead of a static architecture diagram.
+-   **Documentation**: Added `PROJECT_STRUCTURE.md` to document the codebase organization.
+
+### 8.2 Bug Fixes
+-   **Build Stability**: Fixed syntax errors in `src/data/projects.ts` that were causing Vercel build failures.
+-   **Broken Links**: Corrected LinkedIn and Email links in the footer to use proper protocols (`https://`, `mailto:`), resolving 404 errors.
+-   **Asset Handling**: Renamed assets to use kebab-case for better compatibility and implemented a server restart trigger for asset refreshes.
+
+### 8.3 Content Updates
+-   **Footer**: Updated footer to display "© 2025 Mac Pham Thien Long. All rights reserved."
+
