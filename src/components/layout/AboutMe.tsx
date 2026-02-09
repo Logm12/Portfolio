@@ -105,7 +105,7 @@ function QuoteBox({ quote }: { quote: string }) {
 }
 
 export function AboutMe() {
-    const { headline, profileImage, subtitle, paragraphs, highlights, quote } = aboutMeContent;
+    const { headline, profileImage, subtitle, paragraphs, highlights } = aboutMeContent;
 
     return (
         <section id="about" className="py-24 px-6 overflow-hidden">
@@ -130,7 +130,7 @@ export function AboutMe() {
                             {subtitle}
                         </motion.h3>
 
-                        <div className="space-y-4 text-muted text-lg leading-relaxed">
+                        <div className="space-y-4 text-muted text-lg leading-relaxed text-justify">
                             {paragraphs.map((paragraph, index) => (
                                 <motion.p
                                     key={index}
@@ -145,8 +145,6 @@ export function AboutMe() {
                         </div>
 
                         <HighlightStats highlights={highlights} />
-
-                        {quote && <QuoteBox quote={quote} />}
                     </div>
                 </div>
             </div>
