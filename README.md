@@ -131,6 +131,8 @@ To add new images (e.g., architecture diagrams) and avoid 404 errors:
     ```typescript
     image: '/assets/architecture/my-diagram.png',
     architectureImage: '/assets/architecture/my-diagram.png',
+    // Optional: Add a demo video
+    demoVideo: '/assets/demo-video.mp4', 
     ```
     *Note: The path must start with `/assets/` (not `public/assets/`).*
 

@@ -37,7 +37,7 @@ export const projects: Project[] = [
             'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses Fill-in-the-Middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
         tags: ['LLM', 'On-device AI', 'Quantization', 'Viettel Internship'],
         image: '/assets/architecture/viettel-llm.svg',
-        architectureImage: '/assets/architecture/viettel-llm.svg',
+        demoVideo: '/assets/demo-ai-auto-complete.mp4',
         techStack: [
             { name: 'Qwen2.5-Coder-0.5B' },
             { name: 'QLoRA + DPO' },
@@ -56,7 +56,7 @@ export const projects: Project[] = [
             'Cloud-based code completion (GitHub Copilot) requires constant internet, has 200-500ms latency, raises privacy concerns for enterprise code, and incurs $10-20/month subscription costs.',
         solution:
             'Fine-tuned Qwen2.5-Coder with QLoRA on 300K+ code files, aligned with DPO, quantized to 4-bit GGUF. Deployed as OpenAI-compatible API server. Achieves 20-50ms latency on CPU, works offline, zero external dependencies.',
-        githubUrl: '#',
+        githubUrl: 'https://github.com/Logm12/AI-Tab-Autocomplete',
         isSpotlight: true,
     },
     {
@@ -86,8 +86,7 @@ export const projects: Project[] = [
             'Traditional recommendation systems struggle with user-item interaction sparsity and fail to capture high-order collaborative signals. Cold-start users receive poor recommendations.',
         solution:
             'Implemented LightGCN to learn user-item embeddings through graph convolution. Used Qdrant for sub-100ms vector similarity search. Added genre-based cold-start support for new users.',
-        githubUrl: 'https://github.com/Logm12/movie_recommendation_graphrec',
-    },
+        githubUrl: 'https://github.com/Logm12/movie_recommendation_system'
     {
         id: 'hft-mlops',
         title: 'Real-time Algo Trading MLOps',
@@ -115,7 +114,7 @@ export const projects: Project[] = [
             'Financial markets are volatile; models degrade quickly. Manual retraining is slow, and feature inconsistency between training and serving causes prediction errors.',
         solution:
             'Built event-driven architecture with Kafka for real-time streaming. Implemented Feast Feature Store for consistent feature serving. Automated model versioning with MLflow and drift detection.',
-        githubUrl: 'https://github.com/Logm12/HFT_great',
+        githubUrl: 'https://github.com/Logm12/HLF_MLOps',
     },
     {
         id: 'customer-retention',
@@ -144,7 +143,7 @@ export const projects: Project[] = [
             'Traditional churn prediction wastes budget on customers who would stay anyway or are impossible to retain. Marketing campaigns have low ROI due to poor targeting.',
         solution:
             'Applied Causal Inference with T-Learner to estimate individual treatment effects. Segmented customers into 4 groups: Persuadables (target), Sure Things (ignore), Lost Causes (ignore), Sleeping Dogs (avoid).',
-        githubUrl: 'https://github.com/Logm12/Customer_Retention_CC',
+        githubUrl: 'https://github.com/Logm12/CustomerChurnGraph',
     },
 
     {
@@ -173,7 +172,7 @@ export const projects: Project[] = [
             'Existing text-to-music systems often lack emotional depth or fail to support specific languages like Vietnamese effectively.',
         solution:
             'Combined PhoBERT for robust emotion extraction from Vietnamese text with Bi-LSTM sequence modeling to generate emotionally resonant musical patterns.',
-        githubUrl: '#',
+        githubUrl: 'https://github.com/Logm12/AI-Music-Generation',
     },
 
     {
@@ -202,7 +201,7 @@ export const projects: Project[] = [
             'Schools lack automated tools to identify student groups with similar learning patterns for targeted intervention.',
         solution:
             'Applied K-Means clustering to group students into distinct segments, enabling educators to design tailored support strategies.',
-        githubUrl: '#',
+        githubUrl: 'https://github.com/Logm12/student_performance_clustering',
     },
 ];
 
@@ -237,8 +236,8 @@ export const experiences: Experience[] = [
  */
 export const socialLinks: SocialLink[] = [
     { name: 'GitHub', url: 'https://github.com/Logm12', icon: 'github' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/longmac', icon: 'linkedin' },
-    { name: 'Email', url: 'mailto:longmac.dev@gmail.com', icon: 'mail' },
+    { name: 'LinkedIn', url: 'www.linkedin.com/in/mạc-phạm-thiên-long-aa3091267', icon: 'linkedin' },
+    { name: 'Email', url: 'longmac321@gmail.com', icon: 'mail' },
 ];
 
 /**
@@ -317,7 +316,7 @@ export const typewriterPhrases = [
  */
 export const aboutMeContent = {
     headline: 'About Me',
-    profileImage: '/assets/info/person.svg',
+    profileImage: '/assets/info/person.jpg',
     subtitle: 'AI/ML Engineer • Problem Solver • Continuous Learner',
     quote: 'Engineering the future with AI, one neural network at a time.',
     paragraphs: [

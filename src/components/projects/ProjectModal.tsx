@@ -66,6 +66,22 @@ function MetricsGrid({ metrics }: { metrics: ProjectMetric[] }) {
 /** Architecture diagram or demo video placeholder */
 function MediaSection({ project }: { project: Project }) {
     const hasArchitectureImage = project.architectureImage;
+    const hasDemoVideo = project.demoVideo;
+
+    if (hasDemoVideo) {
+        return (
+            <div className="aspect-video glass-card flex items-center justify-center overflow-hidden bg-black/20">
+                <video
+                    src={project.demoVideo}
+                    controls
+                    className="w-full h-full object-contain"
+                    poster={hasArchitectureImage}
+                >
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        );
+    }
 
     return (
         <div className="aspect-video glass-card flex items-center justify-center overflow-hidden">

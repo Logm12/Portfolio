@@ -27,6 +27,7 @@ export interface Project {
     tags: string[];
     image: string;
     architectureImage?: string; // Path to architecture diagram
+    demoVideo?: string; // Path to demo video (mp4)
 
     // Technical details
     techStack: TechItem[];
