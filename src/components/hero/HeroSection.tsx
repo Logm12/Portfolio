@@ -103,7 +103,7 @@ function HeroRole() {
             className="space-y-2"
         >
             <p className="text-foreground">AI Engineer</p>
-            <p className="text-sm text-muted">Building Intelligent Systems • Python • NLP • Deep Learning</p>
+            <p className="text-sm text-muted">Building intelligent systems • Python • NLP • Deep Learning</p>
         </motion.div>
     );
 }

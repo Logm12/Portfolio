@@ -1,5 +1,0 @@
-<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="450" fill="#2d2d2d" />
-  <circle cx="400" cy="225" r="100" fill="#4a90e2" />
-  <text x="400" y="380" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="24">Student Clustering Architecture</text>
-</svg>

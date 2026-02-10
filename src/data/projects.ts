@@ -34,7 +34,7 @@ export const projects: Project[] = [
         description:
             'Edge-optimized code completion running on CPU with 170ms latency. Privacy-first, zero cloud dependency.',
         fullDescription:
-            'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses Fill-in-the-Middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
+            'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses fill-in-the-middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
         tags: ['LLM', 'On-device AI', 'Quantization', 'Viettel Internship'],
         image: '/assets/architecture/viettel-llm.svg',
         demoVideo: '/assets/demo-ai-auto-complete.mp4',
@@ -121,7 +121,7 @@ export const projects: Project[] = [
         id: 'customer-retention',
         title: 'Customer Retention Command Center',
         description:
-            'Marketing ROI optimization using Uplift Modeling (T-Learner) and Explainable AI. Identifies persuadable customers for targeted campaigns.',
+            'Marketing ROI optimization using uplift modeling (T-Learner) and explainable AI. Identifies persuadable customers for targeted campaigns.',
         fullDescription:
             'Causal inference platform that segments customers into Persuadables, Sure Things, Lost Causes, and Sleeping Dogs. Maximizes campaign ROI by targeting only persuadable segments.',
         tags: ['Causal Inference', 'Business Intelligence', 'React'],
@@ -143,7 +143,7 @@ export const projects: Project[] = [
         problem:
             'Traditional churn prediction wastes budget on customers who would stay anyway or are impossible to retain. Marketing campaigns have low ROI due to poor targeting.',
         solution:
-            'Applied Causal Inference with T-Learner to estimate individual treatment effects. Segmented customers into 4 groups: Persuadables (target), Sure Things (ignore), Lost Causes (ignore), Sleeping Dogs (avoid).',
+            'Applied causal inference with T-Learner to estimate individual treatment effects. Segmented customers into 4 groups: Persuadables (target), Sure Things (ignore), Lost Causes (ignore), Sleeping Dogs (avoid).',
         githubUrl: 'https://github.com/Logm12/CustomerChurnGraph',
     },
 
@@ -153,10 +153,10 @@ export const projects: Project[] = [
         description:
             'Generative AI system that converts Vietnamese text into MIDI melodies based on detected emotions.',
         fullDescription:
-            'Research and development of an End-to-End model for text-to-music generation. Utilized PhoBERT (State-of-the-art for Vietnamese) for emotion classification with ~90% accuracy, integrated with LSTM/Bi-LSTM networks for melody generation contextually aligned with emotions. Applied Data Augmentation on the VGMIDI dataset to enhance model diversity.',
+            'Research and development of an end-to-end model for text-to-music generation. Utilized PhoBERT (state-of-the-art for Vietnamese) for emotion classification with ~90% accuracy, integrated with LSTM/Bi-LSTM networks for melody generation contextually aligned with emotions. Applied data augmentation on the VGMIDI dataset to enhance model diversity.',
         tags: ['NLP', 'Generative AI', 'Research'],
-        image: '/assets/arch-music-gen.svg',
-        architectureImage: '/assets/arch-music-gen.svg',
+        image: '/assets/architecture/AI Music Gen.png',
+        architectureImage: '/assets/architecture/AI Music Gen.png',
         techStack: [
             { name: 'PhoBERT' },
             { name: 'LSTM/Bi-LSTM' },
@@ -180,12 +180,12 @@ export const projects: Project[] = [
         id: 'student-performance-clustering',
         title: 'Student Performance Clustering',
         description:
-            'Automated student segmentation based on academic performance using K-Means Clustering.',
+            'Automated student segmentation based on academic performance using K-means clustering.',
         fullDescription:
-            'Data Science project applying Unsupervised Learning to categorize student profiles based on grades and learning behaviors. Process includes: Data Cleaning, Elbow Method for optimal K determination, K-Means implementation, and Data Visualization to support personalized educational roadmaps.',
+            'Data science project applying unsupervised learning to categorize student profiles based on grades and learning behaviors. Process includes: data cleaning, elbow method for optimal K determination, K-means implementation, and data visualization to support personalized educational roadmaps.',
         tags: ['Data Science', 'Machine Learning', 'Academic'],
-        image: '/assets/arch-student-cluster.svg',
-        architectureImage: '/assets/arch-student-cluster.svg',
+        image: '/assets/architecture/Kmeans.png',
+        architectureImage: '/assets/architecture/Kmeans.png',
         techStack: [
             { name: 'Python' },
             { name: 'K-Means' },
@@ -201,7 +201,7 @@ export const projects: Project[] = [
         problem:
             'Schools lack automated tools to identify student groups with similar learning patterns for targeted intervention.',
         solution:
-            'Applied K-Means clustering to group students into distinct segments, enabling educators to design tailored support strategies.',
+            'Applied K-means clustering to group students into distinct segments, enabling educators to design tailored support strategies.',
         githubUrl: 'https://github.com/Logm12/student_performance_clustering',
     },
 ];
@@ -309,7 +309,7 @@ export const typewriterPhrases = [
     'Initializing System...',
     'Loading Models...',
     'Building Scalable Solutions...',
-    'Hello, I build End-to-End AI Systems.',
+    'Hello, I build end-to-end AI systems.',
 ];
 
 /**
@@ -320,7 +320,7 @@ export const aboutMeContent = {
     profileImage: '/assets/info/person.jpg',
     subtitle: 'AI/ML Engineer • Problem Solver • Continuous Learner',
     paragraphs: [
-        'I am an aspiring AI Engineer with a strong foundation in Deep learning and System optimization. I have a proven track record of bridging the gap between research and production, notably in deploying high-performance LLMs on edge devices and developing scalable quantitative models. I am also passionate about MLOps and High-performance Computing, seeking to leverage technical expertise to build impactful, data-driven solutions in a world-class engineering environment.'
+        'I am an aspiring AI Engineer with a strong foundation in deep learning and system optimization. I have a proven track record of bridging the gap between research and production, notably in deploying high-performance LLMs on edge devices and developing scalable quantitative models. I am also passionate about MLOps and high-performance computing, seeking to leverage technical expertise to build impactful, data-driven solutions in a world-class engineering environment.'
     ],
     highlights: [
         { label: 'WorldQuant', value: '600+ Alpha Models' },
