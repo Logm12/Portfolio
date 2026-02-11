@@ -3,9 +3,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16.1-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)]([https://vercel.com/](https://longmacportfolio.vercel.app/))
 
-A modern, animated portfolio showcasing AI/ML and Data Science projects.
+A portfolio showcasing my AI/ML and Data Science projects.
 
 ---
 
