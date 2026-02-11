@@ -3,7 +3,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16.1-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)]([https://vercel.com/](https://longmacportfolio.vercel.app/))
 
 A modern, animated portfolio showcasing AI/ML and Data Science projects.
 
@@ -91,12 +91,7 @@ src/
 ---
 
 ## Deployment on Vercel
-
-### Option 1: One-Click Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Logm12/Portfolio)
-
-### Option 2: Manual Deploy
+### Manual Deploy
 
 1. Push to GitHub
 2. Go to [vercel.com](https://vercel.com)
@@ -152,17 +147,11 @@ Edit CSS variables in `src/app/globals.css`:
 
 **Mac Pham Thien Long**
 
-- AI Engineer Intern @ Viettel Networks
-- Research Consultant @ WorldQuant BRAIN
-- Email: longmac.dev@gmail.com
+- Email: longmac.321@gmail.com
 - GitHub: [github.com/Logm12](https://github.com/Logm12)
 
 ---
 
 ## License
 
-MIT License - feel free to use for your own portfolio!
-
----
-
-Made with care by Mac Pham Thien Long
+MIT License
