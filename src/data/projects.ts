@@ -323,7 +323,7 @@ export const experiences: Experience[] = [
  */
 export const socialLinks: SocialLink[] = [
     { name: 'GitHub', url: 'https://github.com/Logm12', icon: 'github' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/pham-thien-long-mac', icon: 'linkedin' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/pham-thien-long-mac-aa3091267/', icon: 'linkedin' },
     { name: 'Email', url: 'mailto:longmac321@gmail.com', icon: 'mail' },
 ];
 
