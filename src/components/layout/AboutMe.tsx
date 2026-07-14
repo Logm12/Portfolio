@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { aboutMeContent } from '@/data/projects';
-import { Quote, Sparkles, Terminal, Code2 } from 'lucide-react';
+import { Terminal, Code2 } from 'lucide-react';
 
 interface Highlight {
     label: string;
@@ -84,23 +84,6 @@ function HighlightStats({ highlights }: { highlights: Highlight[] }) {
                 </motion.div>
             ))}
         </div>
-    );
-}
-
-function QuoteBox({ quote }: { quote: string }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-8 p-6 glass-card border-l-4 border-cyan-500 relative overflow-hidden"
-        >
-            <div className="absolute top-2 right-4 opacity-10">
-                <Quote size={40} />
-            </div>
-            <p className="text-muted italic relative z-10 font-medium">"{quote}"</p>
-        </motion.div>
     );
 }
 

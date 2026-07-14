@@ -8,7 +8,7 @@ import { useTheme } from '@/hooks/useTheme';
  * Theme toggle button with animated icon transition
  */
 export function ThemeToggle() {
-    const { theme, toggleTheme, isDark, mounted } = useTheme();
+    const { toggleTheme, isDark, mounted } = useTheme();
 
     // Don't render until mounted to avoid hydration mismatch
     if (!mounted) {

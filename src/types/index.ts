@@ -38,7 +38,7 @@ export interface Project {
     solution: string;
 
     // Links
-    githubUrl: string;
+    githubUrl?: string;
     demoUrl?: string;
     reportUrl?: string;
 

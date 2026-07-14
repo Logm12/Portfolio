@@ -55,16 +55,18 @@ export function ProjectCard({ project, index, onViewDetails }: ProjectCardProps)
 
             {/* Links */}
             <div className="flex gap-3 pt-2 border-t border-slate-700/50">
-                <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex items-center gap-1 text-muted hover:text-cyan-400 text-sm transition-colors"
-                >
-                    <Github className="w-4 h-4" />
-                    <span>Code</span>
-                </a>
+                {project.githubUrl && (
+                    <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1 text-muted hover:text-cyan-400 text-sm transition-colors"
+                    >
+                        <Github className="w-4 h-4" />
+                        <span>Code</span>
+                    </a>
+                )}
                 <button
                     onClick={(e) => {
                         e.stopPropagation();

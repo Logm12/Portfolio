@@ -29,6 +29,93 @@ export const techStackItems: TechItem[] = [
  */
 export const projects: Project[] = [
     {
+        id: 'car-agent-function-call',
+        title: 'Intelligent Vehicle Agent with Function Calling',
+        description:
+            'A LangGraph-based vehicle assistant deploying registry-validator-executor logic, utilizing NVIDIA NIM Llama Guard 3 for safety moderation.',
+        fullDescription:
+            'Developed a vehicle assistant using LangGraph and NVIDIA NIM. Designed a registry-validator-executor pattern where Pydantic checks inputs at the validator layer and connection errors are managed in the executor. Implemented the vivi-brain-bench framework to validate 20 control tools across 90 tasks under strict consistency metrics, achieving a 95.56% tool execution success rate. Configured safety gates using Llama Guard 3 and integrated Mem0 memory with local Qdrant databases.',
+        tags: ['LangGraph', 'NVIDIA NIM', 'Llama Guard 3', 'Mem0', 'Qdrant', 'AI Agents'],
+        image: '/assets/architecture/vinsmart-car-agent.svg',
+        techStack: [
+            { name: 'LangGraph' },
+            { name: 'NVIDIA NIM' },
+            { name: 'Llama Guard 3' },
+            { name: 'Mem0 + Qdrant' },
+            { name: 'FastAPI' },
+            { name: 'Next.js' },
+        ],
+        metrics: [
+            { label: 'Tool Success Rate', value: '95.56%' },
+            { label: 'Classification Accuracy', value: '100% (Safety)' },
+            { label: 'Pass3 Rate (Base Tasks)', value: '77.78%' },
+            { label: 'Control Tools', value: '20 Tools' },
+        ],
+        problem:
+            'Traditional in-car assistants fail to execute complex control tasks reliably, lack safety guardrails against malicious or out-of-scope instructions, and do not persist driver-specific preferences.',
+        solution:
+            'Built a multi-agent system with validation and executor blocks, adding human-in-the-loop gates for high-risk actions. Memory is persisted per-driver utilizing vector database search.',
+        githubUrl: 'https://github.com/Logm12/car-agent-function-call',
+        isSpotlight: true,
+    },
+    {
+        id: 'thesis-financial-analyzer',
+        title: 'Multi-Agent Financial Analysis System',
+        description:
+            'A multi-agent workflow featuring a query router, a ChromaDB retriever, and a sandboxed Python execution environment to parse financial reports.',
+        fullDescription:
+            'Orchestrated a multi-agent LangGraph workflow featuring a query router, a ChromaDB retriever, and a sandboxed Python execution environment. Built an asynchronous document extraction pipeline using FastAPI, PyMuPDF, and OCR (Pytesseract, EasyOCR). Measured and optimized system performance using RAGAS on a 200-sample benchmark, achieving over 93% Faithfulness and 95% Answer Relevance.',
+        tags: ['LangGraph', 'ChromaDB', 'FastAPI', 'RAGAS', 'React', 'Docker'],
+        image: '/assets/architecture/thesis-financial.svg',
+        techStack: [
+            { name: 'LangGraph' },
+            { name: 'FastAPI' },
+            { name: 'ChromaDB' },
+            { name: 'Redis' },
+            { name: 'React' },
+            { name: 'Docker' },
+        ],
+        metrics: [
+            { label: 'Faithfulness', value: '93%+' },
+            { label: 'Answer Relevance', value: '95%+' },
+            { label: 'Benchmark size', value: '200 samples' },
+        ],
+        problem:
+            'Extracting and calculating metrics from multi-page financial PDFs is prone to hallucinations and requires complex calculations that standard RAG systems cannot calculate.',
+        solution:
+            'Created specialized agents (Router, Retriever, Coder) to delegate tasks. The Coder agent writes and executes Python calculations locally inside a sandbox with automatic compiler traceback feedback.',
+        githubUrl: 'https://github.com/Logm12/Thesis',
+    },
+    {
+        id: 'edupilot',
+        title: 'EduPilot: Large-Scale AI Teaching Assistant',
+        description:
+            'A Socratic tutoring agentic system supporting 9,000+ students, built with Spring Boot, Next.js, FastAPI, gRPC, and PostgreSQL.',
+        fullDescription:
+            'Designed and scaled a Socratic tutoring agentic system supporting 9,000+ students, optimizing resource load from 1 TA per 1,800 students. Reduced response latency to under 1.5 seconds using advanced RAG and a Redis-based semantic cache that intercepted 30%–50% of duplicate queries. Engineered dual-stage guardrails achieving 92%–95% intent classification accuracy. Implemented a data-privacy gateway to redact PII and integrated a graceful fallback system for human TA escalation.',
+        tags: ['gRPC', 'Spring Boot', 'LangGraph', 'Next.js', 'Redis', 'Semantic Cache'],
+        image: '/assets/architecture/edupilot.svg',
+        techStack: [
+            { name: 'Spring Boot' },
+            { name: 'LangGraph' },
+            { name: 'gRPC' },
+            { name: 'Next.js' },
+            { name: 'Redis Semantic Cache' },
+            { name: 'pgvector' },
+        ],
+        metrics: [
+            { label: 'Scale Support', value: '9,000+ Students' },
+            { label: 'Response Latency', value: '<1.5s' },
+            { label: 'Cache Intercept', value: '30%-50%' },
+            { label: 'Intent Accuracy', value: '92%-95%' },
+        ],
+        problem:
+            'Teaching assistants are overwhelmed by repetitive academic and administrative queries, causing response times to delay up to 2-3 days.',
+        solution:
+            'Developed a multi-agent system with semantic caching and gRPC interfaces, automating academic queries and forwarding complex cases to human TAs.',
+        githubUrl: 'https://github.com/Logm12/A20-App-128',
+    },
+    {
         id: 'viettel-llm',
         title: 'Viettel AI Coding Assistant',
         description:
@@ -37,7 +124,6 @@ export const projects: Project[] = [
             'Built an end-to-end edge AI system for secure code completion at Viettel Networks. Uses fill-in-the-middle (FIM) training, QLoRA fine-tuning, DPO alignment, and GGUF quantization to run locally on CPU. Integrated with VS Code via OpenAI-compatible API.',
         tags: ['LLM', 'On-device AI', 'Quantization', 'Viettel Internship'],
         image: '/assets/architecture/viettel-llm.svg',
-        demoVideo: '/assets/demo-ai-auto-complete.mp4',
         techStack: [
             { name: 'Qwen2.5-Coder-0.5B' },
             { name: 'QLoRA + DPO' },
@@ -53,11 +139,62 @@ export const projects: Project[] = [
             { label: 'API Compatible', value: 'OpenAI' },
         ],
         problem:
-            'Cloud-based code completion (GitHub Copilot) requires constant internet, has 200-500ms latency, raises privacy concerns for enterprise code, and incurs $10-20/month subscription costs.',
+            'Cloud-based code completion requires internet, has higher latency, raises privacy concerns for enterprise code, and incurs subscription costs.',
         solution:
             'Fine-tuned Qwen2.5-Coder with QLoRA on 300K+ code files, aligned with DPO, quantized to 4-bit GGUF. Deployed as OpenAI-compatible API server. Achieves 20-50ms latency on CPU, works offline, zero external dependencies.',
         githubUrl: 'https://github.com/Logm12/AI-Tab-Autocomplete',
-        isSpotlight: true,
+    },
+    {
+        id: 'reefer-logistics',
+        title: 'Reefer Logistics Supply Chain Optimization Model',
+        description:
+            'An MIQP optimization model for Vietnam’s domestic reefer logistics market, resolving vehicle routing and perishability constraints.',
+        fullDescription:
+            'Formulated a Mixed-Integer Quadratic Programming (MIQP) optimization model for Vietnam’s domestic reefer logistics market, resolving vehicle routing, cold storage selection, and perishability loss constraints. Linearized binary-continuous variable interactions in model constraints to enable efficient solving via Gurobi. Derived an optimal network that cut costs to 257.38M VND (saving 20–35% over decentralized baselines).',
+        tags: ['Optimization', 'MIQP', 'Gurobi', 'Supply Chain', 'Python'],
+        image: '/assets/architecture/reefer-logistics.svg',
+        techStack: [
+            { name: 'Python' },
+            { name: 'Gurobi' },
+            { name: 'MIQP' },
+            { name: 'Supply Chain Simulation' },
+        ],
+        metrics: [
+            { label: 'Cost Reduction', value: '20%-35%' },
+            { label: 'Total Cost', value: '257.38M VND' },
+            { label: 'On-Time Delivery', value: '100%' },
+        ],
+        problem:
+            'Vietnam\'s domestic cold chain logistics suffer from fragmented storage, underutilized vehicles, and poor route planning, which drives up operational costs and product spoilage.',
+        solution:
+            'Formulated an optimization model integrating vehicle routing, cold storage selection, delivery timing, and product quality degradation into a single solvable MIQP objective.',
+    },
+    {
+        id: 'fire-detection',
+        title: 'Fire and Smoke Detection System',
+        description:
+            'A hybrid safety-critical fire detection system combining hardware sensor arrays with real-time computer vision on a Raspberry Pi.',
+        fullDescription:
+            'Designed and built a hybrid fire detection system combining hardware sensor arrays (temperature, smoke MQ-2, flame) with real-time computer vision on a Raspberry Pi. Trained and evaluated custom YOLOv5 models on a Roboflow dataset of 2,427 fire/smoke images, achieving 85.5% mAP@0.5. Conducted comparative benchmarking of model variants under low-compute edge constraints.',
+        tags: ['YOLOv5', 'Raspberry Pi', 'Roboflow', 'Embedded Systems', 'Computer Vision'],
+        image: '/assets/architecture/fire-detection.svg',
+        techStack: [
+            { name: 'YOLOv5' },
+            { name: 'Roboflow' },
+            { name: 'Google Colab' },
+            { name: 'Raspberry Pi 4' },
+            { name: 'Embedded Sensors' },
+        ],
+        metrics: [
+            { label: 'mAP@0.5', value: '85.5%' },
+            { label: 'Precision', value: '89.5%' },
+            { label: 'Recall', value: '80.6%' },
+        ],
+        problem:
+            'Traditional smoke detectors can be slow or produce false positives, whereas standalone computer vision models are too resource-heavy for low-power edge nodes.',
+        solution:
+            'Combined physical sensor readings with an optimized YOLOv5 model running on a Raspberry Pi 4 to cross-verify indicators before triggering alarms.',
+        githubUrl: 'https://github.com/Logm12/Fire-Detection-YOLOv5',
     },
     {
         id: 'graphrec',
@@ -68,7 +205,6 @@ export const projects: Project[] = [
             'Implemented graph neural network for recommendation, capturing multi-hop neighborhood information. Vector similarity search with Qdrant for sub-100ms responses.',
         tags: ['Deep Learning', 'Microservices', 'High Performance'],
         image: '/assets/architecture/Movie-rec-diagram.png',
-        architectureImage: '/assets/architecture/Movie-rec-diagram.png',
         techStack: [
             { name: 'LightGCN (PyTorch)' },
             { name: 'Qdrant Vector DB' },
@@ -97,7 +233,6 @@ export const projects: Project[] = [
             'End-to-end MLOps system for cryptocurrency trading with real-time Kafka streaming, Feast feature store, and MLflow model versioning.',
         tags: ['FinTech', 'Event-Driven', 'Kafka'],
         image: '/assets/architecture/HFT_archtechture_diagrams.png',
-        architectureImage: '/assets/architecture/HFT_archtechture_diagrams.png',
         techStack: [
             { name: 'XGBoost + LightGBM' },
             { name: 'Apache Kafka' },
@@ -112,7 +247,7 @@ export const projects: Project[] = [
             { label: 'Drift Detection', value: 'Real-time' },
         ],
         problem:
-            'Financial markets are volatile; models degrade quickly. Manual retraining is slow, and feature inconsistency between training and serving causes prediction errors.',
+            'Financial markets are volatile; models degrade quickly. retries are slow, and feature inconsistency between training and serving causes prediction errors.',
         solution:
             'Built event-driven architecture with Kafka for real-time streaming. Implemented Feast Feature Store for consistent feature serving. Automated model versioning with MLflow and drift detection.',
         githubUrl: 'https://github.com/Logm12/HLF_MLOps',
@@ -126,7 +261,6 @@ export const projects: Project[] = [
             'Causal inference platform that segments customers into Persuadables, Sure Things, Lost Causes, and Sleeping Dogs. Maximizes campaign ROI by targeting only persuadable segments.',
         tags: ['Causal Inference', 'Business Intelligence', 'React'],
         image: '/assets/architecture/Customer_Architechture Diagram.png',
-        architectureImage: '/assets/architecture/Customer_Architechture Diagram.png',
         techStack: [
             { name: 'LightGBM T-Learner' },
             { name: 'SHAP (Explainable AI)' },
@@ -146,64 +280,6 @@ export const projects: Project[] = [
             'Applied causal inference with T-Learner to estimate individual treatment effects. Segmented customers into 4 groups: Persuadables (target), Sure Things (ignore), Lost Causes (ignore), Sleeping Dogs (avoid).',
         githubUrl: 'https://github.com/Logm12/CustomerChurnGraph',
     },
-
-    {
-        id: 'emotion-music-gen',
-        title: 'Emotion-Driven Music Generation',
-        description:
-            'Generative AI system that converts Vietnamese text into MIDI melodies based on detected emotions.',
-        fullDescription:
-            'Research and development of an end-to-end model for text-to-music generation. Utilized PhoBERT (state-of-the-art for Vietnamese) for emotion classification with ~90% accuracy, integrated with LSTM/Bi-LSTM networks for melody generation contextually aligned with emotions. Applied data augmentation on the VGMIDI dataset to enhance model diversity.',
-        tags: ['NLP', 'Generative AI', 'Research'],
-        image: '/assets/architecture/AI Music Gen.png',
-        architectureImage: '/assets/architecture/AI Music Gen.png',
-        techStack: [
-            { name: 'PhoBERT' },
-            { name: 'LSTM/Bi-LSTM' },
-            { name: 'Python' },
-            { name: 'Data Augmentation' },
-            { name: 'PyTorch' },
-        ],
-        metrics: [
-            { label: 'Emotion Accuracy', value: '90.0%' },
-            { label: 'Architecture', value: 'End-to-End' },
-            { label: 'Dataset', value: 'VGMIDI + Custom' },
-        ],
-        problem:
-            'Existing text-to-music systems often lack emotional depth or fail to support specific languages like Vietnamese effectively.',
-        solution:
-            'Combined PhoBERT for robust emotion extraction from Vietnamese text with Bi-LSTM sequence modeling to generate emotionally resonant musical patterns.',
-        githubUrl: 'https://github.com/Logm12/AI-Music-Generation',
-    },
-
-    {
-        id: 'student-performance-clustering',
-        title: 'Student Performance Clustering',
-        description:
-            'Automated student segmentation based on academic performance using K-means clustering.',
-        fullDescription:
-            'Data science project applying unsupervised learning to categorize student profiles based on grades and learning behaviors. Process includes: data cleaning, elbow method for optimal K determination, K-means implementation, and data visualization to support personalized educational roadmaps.',
-        tags: ['Data Science', 'Machine Learning', 'Academic'],
-        image: '/assets/architecture/Kmeans.png',
-        architectureImage: '/assets/architecture/Kmeans.png',
-        techStack: [
-            { name: 'Python' },
-            { name: 'K-Means' },
-            { name: 'Pandas' },
-            { name: 'Matplotlib' },
-            { name: 'Scikit-learn' },
-        ],
-        metrics: [
-            { label: 'Algorithm', value: 'K-Means' },
-            { label: 'Role', value: 'Team Leader' },
-            { label: 'Outcome', value: 'Automated Profiling' },
-        ],
-        problem:
-            'Schools lack automated tools to identify student groups with similar learning patterns for targeted intervention.',
-        solution:
-            'Applied K-means clustering to group students into distinct segments, enabling educators to design tailored support strategies.',
-        githubUrl: 'https://github.com/Logm12/student_performance_clustering',
-    },
 ];
 
 /**
@@ -211,22 +287,32 @@ export const projects: Project[] = [
  */
 export const experiences: Experience[] = [
     {
+        id: 'vinsmartfuture',
+        period: '04/2026 – 07/2026',
+        company: 'VinSmartFuture (Device AI Division)',
+        role: 'AI Engineer Intern',
+        description:
+            'Co-developed a LangGraph-based in-car voice assistant using a registry-validator-executor architecture. Conducted adversarial testing on tool calls to evaluate agent resilience, and designed testing frameworks to evaluate control tools.',
+        isActive: true,
+        skills: ['LangGraph', 'NVIDIA NIM', 'Llama Guard 3', 'Qdrant', 'FastAPI'],
+    },
+    {
         id: 'viettel',
-        period: '11/2025-12/2025',
+        period: '11/2025 – 12/2025',
         company: 'Viettel Networks',
         role: 'AI Engineer Intern',
         description:
-            'Deploying LLM on-premise, model quantization (GGUF), and building RAG systems for enterprise document retrieval.',
+            'Deployed on-premise LLMs, performed model quantization (GGUF), fine-tuned models using QLoRA and DPO, and built data sanitization pipelines for offline coding assistants.',
         isActive: true,
-        skills: ['LLM', 'Quantization', 'RAG', 'FastAPI'],
+        skills: ['QLoRA', 'DPO', 'Quantization', 'GGUF', 'FastAPI'],
     },
     {
         id: 'worldquant',
-        period: '07/2023 - Present',
+        period: '07/2023 – Present',
         company: 'WorldQuant BRAIN',
         role: 'Research Consultant',
         description:
-            'Built 600+ quantitative alpha models using statistical arbitrage and machine learning techniques for financial markets.',
+            'Designed and optimized over 667 alpha models using statistical arbitrage and machine learning techniques to forecast market movements.',
         isActive: true,
         skills: ['Python', 'Statistics', 'Time-series', 'Backtesting'],
     },
@@ -237,7 +323,7 @@ export const experiences: Experience[] = [
  */
 export const socialLinks: SocialLink[] = [
     { name: 'GitHub', url: 'https://github.com/Logm12', icon: 'github' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mạc-phạm-thiên-long-aa3091267', icon: 'linkedin' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/pham-thien-long-mac', icon: 'linkedin' },
     { name: 'Email', url: 'mailto:longmac321@gmail.com', icon: 'mail' },
 ];
 
@@ -246,28 +332,60 @@ export const socialLinks: SocialLink[] = [
  */
 export const honors: Honor[] = [
     {
-        id: 'viettel-award',
-        title: 'National Finals of the MOS World Championship 2025',
-        issuer: 'Viettel 2025',
-        date: '01/07/2025',
-        image: '/assets/awards/2nd National Contest.png',
-        description: 'Competition for office IT solutions',
-    },
-    {
         id: 'sinh-vien-5-tot',
-        title: 'Student of 5 Merits',
-        issuer: 'University',
-        date: '28/10/2025',
+        title: 'Student of 5 Merits (Hanoi City Level)',
+        issuer: 'Hanoi Youth Union',
+        date: '12/2025',
         image: '/assets/awards/5 Merits.png',
-        description: 'Excellence in academics and extracurriculars',
+        description: 'Recognition for academic achievement, ethics, skills, physical training, and volunteering.',
     },
     {
         id: 'inter_olym',
-        title: 'Vietnam Representative at International Olympiad of Financial Security 2025',
+        title: 'Vietnam Representative at International Olympiad of Financial Security',
         issuer: 'Russia',
-        date: '03/10/2025',
+        date: '09/2025',
         image: '/assets/awards/IOFS.png',
-        description: 'Represented Vietnam in the final round in Krasnoyarsk, Russia',
+        description: 'Represented Vietnam in the final stage in Krasnoyarsk, Russia.',
+    },
+    {
+        id: 'mis-talent',
+        title: '2nd Prize, MIS Talent Competition',
+        issuer: 'VNU-IS',
+        date: '08/2025',
+        image: '/assets/awards/MISTalent.png',
+        description: 'E-Mastery category for innovative business models utilizing AI.',
+    },
+    {
+        id: 'moswc',
+        title: '2nd Prize (National Finals), MOS World Championship',
+        issuer: 'Microsoft / IIG Vietnam',
+        date: '07/2025',
+        image: '/assets/awards/MOSWC.png',
+        description: 'National award in the Microsoft Excel category.',
+    },
+    {
+        id: 'vnuis-research',
+        title: '3rd Prize, Co-Author, 17th Student Scientific Research Conference',
+        issuer: 'VNU-IS',
+        date: '05/2025',
+        image: '/assets/awards/Research.png',
+        description: 'Award for the reefer logistics cold chain optimization paper.',
+    },
+    {
+        id: 'star-awards',
+        title: '1st Prize, Star Awards English Competition',
+        issuer: 'Hanoi Region',
+        date: '11/2024',
+        image: '/assets/awards/StarAwards.png',
+        description: 'Regional English communication and academic competition.',
+    },
+    {
+        id: 'fbu-research',
+        title: 'Presented & Published Paper, 5th Student Scientific Research Conference',
+        issuer: 'FBU',
+        date: '05/2024',
+        image: '/assets/awards/FBU.png',
+        description: 'Selected paper on Multi-Sensor Real-Time Fire and Smoke Detection.',
     },
 ];
 
@@ -287,18 +405,18 @@ export const skillCategories: SkillCategory[] = [
     },
     {
         name: 'LLM & NLP',
-        level: 85,
-        skills: ['HuggingFace', 'LangChain', 'QLoRA', 'GGUF'],
+        level: 88,
+        skills: ['HuggingFace', 'LangGraph', 'NVIDIA NIM', 'QLoRA', 'GGUF'],
     },
     {
         name: 'Deployment/Ops',
         level: 85,
-        skills: ['Docker', 'FastAPI', 'MLflow', 'Kubernetes'],
+        skills: ['Docker', 'FastAPI', 'gRPC', 'Kubernetes'],
     },
     {
         name: 'Quantitative',
-        level: 75,
-        skills: ['Time-series', 'Backtesting', 'Statistics', 'Financial ML'],
+        level: 80,
+        skills: ['Time-series', 'Backtesting', 'Statistics', 'MIQP', 'Gurobi'],
     },
 ];
 
@@ -308,8 +426,8 @@ export const skillCategories: SkillCategory[] = [
 export const typewriterPhrases = [
     'Initializing System...',
     'Loading Models...',
-    'Building Scalable Solutions...',
-    'Hello, I build end-to-end AI systems.',
+    'Building Scalable AI Solutions...',
+    'Hello, I build end-to-end intelligent systems.',
 ];
 
 /**
@@ -318,13 +436,13 @@ export const typewriterPhrases = [
 export const aboutMeContent = {
     headline: 'About Me',
     profileImage: '/assets/info/person.jpg',
-    subtitle: 'AI/ML Engineer • Problem Solver • Continuous Learner',
+    subtitle: 'AI Engineer • Problem Solver • Continuous Learner',
     paragraphs: [
-        'I am an aspiring AI Engineer with a strong foundation in deep learning and system optimization. I have a proven track record of bridging the gap between research and production, notably in deploying high-performance LLMs on edge devices and developing scalable quantitative models. I am also passionate about MLOps and high-performance computing, seeking to leverage technical expertise to build impactful, data-driven solutions in a world-class engineering environment.'
+        'I am an AI Engineer with a background in Management Information Systems. I specialize in developing production-ready AI applications, with a strong focus on Multi-agent orchestration, LLM optimization, and data engineering. I have hands-on experience co-developing voice assistants, fine-tuning lightweight LLMs for offline environments, and building large-scale intelligent systems.'
     ],
     highlights: [
+        { label: 'VinSmartFuture', value: 'LangGraph Assistant' },
+        { label: 'Viettel Networks', value: 'Edge AI Deployment' },
         { label: 'WorldQuant', value: '600+ Alpha Models' },
-        { label: 'Viettel', value: 'Edge AI Deployment' },
-        { label: 'Focus', value: 'Production-Ready ML' },
     ],
 };

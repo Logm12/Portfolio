@@ -35,7 +35,9 @@ export function useTypewriter(
                 // Finished typing current phrase
                 if (phraseIndex === phrases.length - 1) {
                     // Last phrase - stay complete
-                    setIsComplete(true);
+                    timeout = setTimeout(() => {
+                        setIsComplete(true);
+                    }, 0);
                 } else {
                     // Pause before deleting
                     timeout = setTimeout(() => {
@@ -51,8 +53,10 @@ export function useTypewriter(
                 }, deletingSpeed);
             } else {
                 // Finished deleting, move to next phrase
-                setPhraseIndex((prev) => prev + 1);
-                setIsTyping(true);
+                timeout = setTimeout(() => {
+                    setPhraseIndex((prev) => prev + 1);
+                    setIsTyping(true);
+                }, 0);
             }
         }
 
